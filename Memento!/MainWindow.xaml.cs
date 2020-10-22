@@ -23,6 +23,8 @@ namespace Memento_
         public MainWindow()
         {
             InitializeComponent();
+            new FaceLessWindows { WindowStyle = WindowStyle.None }.Show();
+            Hide();
         }
     }
 }
