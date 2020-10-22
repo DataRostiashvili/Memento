@@ -24,7 +24,14 @@ namespace Memento_
     /// </summary>
     public partial class FaceLessWindows : Window
     {
-        public string Text = String.Empty;
+        public string Text
+        {
+            set
+            {
+                mainTextBox.Text = value != String.Empty ? value : "Xamarin";
+            }
+            get { return mainTextBox.Text; }
+        }
 
         private const int GWL_STYLE = -16;
         private const int WS_SYSMENU = 0x80000;
@@ -43,7 +50,7 @@ namespace Memento_
                  SetWindowLong(hwnd, GWL_STYLE, GetWindowLong(hwnd, GWL_STYLE) & ~WS_SYSMENU);
              };
 
-            mainTextBox.Text = Text != String.Empty ? Text : "Xamarin";
+            
 
                 var dis = Application.Current.Dispatcher;
 

@@ -14,7 +14,7 @@
     </Window.Background>
     <Grid>
         
-        <TextBlock Background="Transparent" x:Name="mainTextBox" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="60" >
+        <TextBlock Background="Transparent" x:Name="mainTextBox" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="65" >
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="Loaded">
                     <BeginStoryboard>
@@ -39,7 +39,7 @@
                     <GradientStop x:Name="color4" Offset="1" Color="Black"></GradientStop>
                 </LinearGradientBrush>
             </TextBlock.Foreground>
-            Xamarin
+            
         </TextBlock>
     </Grid>
 </Window>
