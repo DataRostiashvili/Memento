@@ -54,11 +54,11 @@ namespace Memento_
 
                 var dis = Application.Current.Dispatcher;
 
-                var timer = new System.Timers.Timer(7000) { AutoReset = true, Enabled = true };
+                var timer = new System.Timers.Timer(6000) { AutoReset = true, Enabled = true };
                 timer.Elapsed += (sender, e) =>
                 {
-                    var list = new List<Color>(4);
-                    for (int i = 0; i < 4; i++)
+                    var list = new List<Color>(6);
+                    for (int i = 0; i < 6; i++)
                         list.Add(Helpers.GetRandColor());
 
                     dis.Invoke(() => TimerUpdate(list));
@@ -71,6 +71,8 @@ namespace Memento_
 
          void TimerUpdate(List<Color> randColors)
          {
+
+            color0.Color = randColors[5];
             color1.Color = randColors[0];
 
             color2.Color = randColors[1];
@@ -78,6 +80,8 @@ namespace Memento_
             color3.Color = randColors[2];
 
             color4.Color = randColors[3];
+
+            color5.Color = randColors[4];
          }
 
 

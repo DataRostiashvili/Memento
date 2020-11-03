@@ -29,7 +29,7 @@ namespace Memento_
 
             int ind = 0;
 
-            int margin = 0;
+            int margin = 40;
             const int MAX_LEFT_OFFSET = 1369, MAX_TOP_OFFSET = 768;
             foreach (var item in RunTimeData.MemorizableItems)
             {
@@ -39,19 +39,20 @@ namespace Memento_
                 windows[ind].WindowStyle = WindowStyle.None;
 
                 int left = 0, top = 0;
+                int w = (int)windows[ind].ActualWidth, h = (int)windows[ind].ActualHeight;
                 switch(item.PositionToScreen)
                 {
                     case 0: left = margin; top = margin; break;
-                    case 1: top = MAX_TOP_OFFSET / 2; left = margin; break;
-                    case 2: top = MAX_TOP_OFFSET - margin; left = margin; break;
+                    case 1: top = MAX_TOP_OFFSET / 2 - h; left = margin; break;
+                    case 2: top = MAX_TOP_OFFSET - margin - h; left = margin; break;
 
                     case 3: left = MAX_LEFT_OFFSET / 2; top = margin; break;
-                    case 4: left = MAX_LEFT_OFFSET / 2; top = MAX_TOP_OFFSET / 2; break;
-                    case 5: left = MAX_LEFT_OFFSET / 2; top = MAX_TOP_OFFSET - margin;  break;
+                    case 4: left = MAX_LEFT_OFFSET / 2; top = MAX_TOP_OFFSET / 2 -h; break;
+                    case 5: left = MAX_LEFT_OFFSET / 2; top = MAX_TOP_OFFSET - h;  break;
 
-                    case 6: left = MAX_LEFT_OFFSET - margin ; top = margin; break;
-                    case 7: left = MAX_LEFT_OFFSET - margin; top = MAX_TOP_OFFSET / 2; break;
-                    case 9: left = MAX_LEFT_OFFSET - margin ; top = MAX_TOP_OFFSET - margin; break;
+                    case 6: left = MAX_LEFT_OFFSET - margin - w ; top = margin; break;
+                    case 7: left = MAX_LEFT_OFFSET - margin - w; top = MAX_TOP_OFFSET / 2 - h; break;
+                    case 8: left = MAX_LEFT_OFFSET - margin - w ; top = MAX_TOP_OFFSET - margin - h; break;
 
                     default:
                         throw new Exception("unsopported");
@@ -66,7 +67,7 @@ namespace Memento_
 
             foreach (var i in windows)
                 i.Show();
-            new FaceLessWindows { WindowStyle = WindowStyle.None }.Show();
+            //new FaceLessWindows { WindowStyle = WindowStyle.None }.Show();
             Hide();
         }
     }

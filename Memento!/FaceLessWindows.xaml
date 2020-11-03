@@ -8,24 +8,28 @@
         AllowsTransparency="True"
         ResizeMode="NoResize"
         Topmost="True"
-        Title="" MinHeight="200" MinWidth="400" MaxHeight="200" MaxWidth="400">
+        Title=""  Height="Auto" Width="Auto" MaxWidth="400" MaxHeight="100">
     <Window.Background>
         <SolidColorBrush Opacity="0" Color="Transparent"></SolidColorBrush>
     </Window.Background>
     <Grid>
         
-        <TextBlock Background="Transparent" x:Name="mainTextBox" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="65" >
+        <TextBlock Background="Transparent" x:Name="mainTextBox" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="57" >
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="Loaded">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="color1" Storyboard.TargetProperty="Offset" From="0" To=".47" AutoReverse="True" RepeatBehavior="Forever"
+                            <DoubleAnimation Storyboard.TargetName="color0" Storyboard.TargetProperty="Offset" From="0" To=".25" AutoReverse="True" RepeatBehavior="Forever"
+                                             Duration="0:0:2" />
+                            <DoubleAnimation Storyboard.TargetName="color1" Storyboard.TargetProperty="Offset" From=".25" To=".47" AutoReverse="True" RepeatBehavior="Forever"
                                              Duration="0:0:2" />
                             <DoubleAnimation Storyboard.TargetName="color2" Storyboard.TargetProperty="Offset" From=".471" To=".498" AutoReverse="True" RepeatBehavior="Forever"
                                              Duration="0:0:2" />
                             <DoubleAnimation Storyboard.TargetName="color3" Storyboard.TargetProperty="Offset" From=".499" To=".522" AutoReverse="True" RepeatBehavior="Forever"
                                              Duration="0:0:2" />
-                            <DoubleAnimation Storyboard.TargetName="color4" Storyboard.TargetProperty="Offset" From=".5223" To="1" AutoReverse="True" RepeatBehavior="Forever"
+                            <DoubleAnimation Storyboard.TargetName="color4" Storyboard.TargetProperty="Offset" From=".5223" To=".7" AutoReverse="True" RepeatBehavior="Forever"
+                                             Duration="0:0:2" />
+                            <DoubleAnimation Storyboard.TargetName="color5" Storyboard.TargetProperty="Offset" From=".7" To="1" AutoReverse="True" RepeatBehavior="Forever"
                                              Duration="0:0:2" />
                         </Storyboard>
                     </BeginStoryboard>
@@ -33,13 +37,15 @@
             </TextBlock.Triggers>
             <TextBlock.Foreground>
                 <LinearGradientBrush>
+                    <GradientStop x:Name="color0" Offset="0" Color="Firebrick"></GradientStop>
                     <GradientStop x:Name="color1" Offset="0" Color="Red"></GradientStop>
                     <GradientStop x:Name="color2" Offset=".5" Color="AliceBlue"></GradientStop>
                     <GradientStop x:Name="color3" Offset=".5" Color="Beige"></GradientStop>
                     <GradientStop x:Name="color4" Offset="1" Color="Black"></GradientStop>
+                    <GradientStop x:Name="color5" Offset="1" Color="AliceBlue"></GradientStop>
                 </LinearGradientBrush>
             </TextBlock.Foreground>
-            
+            Xamarin
         </TextBlock>
     </Grid>
 </Window>
