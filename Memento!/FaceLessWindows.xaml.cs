@@ -54,7 +54,7 @@ namespace Memento_
 
                 var dis = Application.Current.Dispatcher;
 
-                var timer = new System.Timers.Timer(6000) { AutoReset = true, Enabled = true };
+                var timer = new System.Timers.Timer(1000) { AutoReset = true, Enabled = true };
                 timer.Elapsed += (sender, e) =>
                 {
                     var list = new List<Color>(6);
